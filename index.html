@@ -9,17 +9,12 @@
             var userAgent = navigator.userAgent || navigator.vendor || window.opera;
             console.log("User Agent:", userAgent);
 
-            // iOS App ID for Santander
-            var iosAppId = "1138284753";
-            // Android Package Name for Santander
-            var androidPackageName = "com.santander.rio";
-
             if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
                 console.log("Redirecting to App Store...");
-                window.location.href = "https://apps.apple.com/app/id"1138284753;
+                window.location.href = "https://apps.apple.com/app/id1138284753";
             } else if (/android/i.test(userAgent)) {
                 console.log("Redirecting to Google Play Store...");
-                window.location.href = "https://play.google.com/store/apps/details?id="com.santander.rio;
+                window.location.href = "https://play.google.com/store/apps/details?id=com.santander.rio";
             } else {
                 document.getElementById("message").innerText = "Please visit the App Store or Google Play Store to download the app.";
             }
