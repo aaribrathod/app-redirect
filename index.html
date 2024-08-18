@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Download</title>
+    <script>
+        function redirectToStore() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            // Check if the device is iOS
+            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                // Redirect to the App Store
+                window.location.href = "https://apps.apple.com/app/id1300146617";
+            } 
+            // Check if the device is Android
+            else if (/android/i.test(userAgent)) {
+                // Redirect to Google Play Store
+                window.location.href = "https://play.google.com/store/apps/details?id=tencent.ig&hl=en";
+            } 
+            // Default behavior (you can handle other devices here)
+            else {
+                document.getElementById("message").innerText = "Please visit the App Store or Google Play Store to download the app.";
+            }
+        }
+    </script>
+</head>
+<body onload="redirectToStore()">
+    <h1>Redirecting you to the app store...</h1>
+    <p id="message"></p>
+</body>
+</html>
