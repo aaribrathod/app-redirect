@@ -9,12 +9,17 @@
             var userAgent = navigator.userAgent || navigator.vendor || window.opera;
             console.log("User Agent:", userAgent);
 
+            // iOS App ID for Santander Portugal
+            var iosAppId = "1375931674";
+            // Android Package Name for Santander Portugal
+            var androidPackageName = "pt.santander.santanderapp";
+
             if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
                 console.log("Redirecting to App Store...");
-                window.location.href = "https://apps.apple.com/app/id1559567261";
+                window.location.href = "https://apps.apple.com/app/id" + iosAppId;
             } else if (/android/i.test(userAgent)) {
                 console.log("Redirecting to Google Play Store...");
-                window.location.href = "https://play.google.com/store/apps/details?id=pt.santander.santanderapp";
+                window.location.href = "https://play.google.com/store/apps/details?id=" + androidPackageName;
             } else {
                 document.getElementById("message").innerText = "Please visit the App Store or Google Play Store to download the app.";
             }
