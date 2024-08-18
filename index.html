@@ -7,19 +7,15 @@
     <script>
         function redirectToStore() {
             var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            console.log("User Agent:", userAgent);
 
-            // Check if the device is iOS
             if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-                // Redirect to the App Store
+                console.log("Redirecting to App Store...");
                 window.location.href = "https://apps.apple.com/app/id1300146617";
-            } 
-            // Check if the device is Android
-            else if (/android/i.test(userAgent)) {
-                // Redirect to Google Play Store
+            } else if (/android/i.test(userAgent)) {
+                console.log("Redirecting to Google Play Store...");
                 window.location.href = "https://play.google.com/store/apps/details?id=com.tencent.ig";
-            } 
-            // Default behavior (you can handle other devices here)
-            else {
+            } else {
                 document.getElementById("message").innerText = "Please visit the App Store or Google Play Store to download the app.";
             }
         }
