@@ -9,17 +9,12 @@
             var userAgent = navigator.userAgent || navigator.vendor || window.opera;
             console.log("User Agent:", userAgent);
 
-            // iOS App ID for Santander Portugal
-            var iosAppId = "id374165361";
-            // Android Package Name for Santander Portugal
-            var androidPackageName = "com.taskrabbit.droid.consumer";
-
             if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
                 console.log("Redirecting to App Store...");
-                window.location.href = "https://apps.apple.com/app/id" + iosAppId;
+                window.location.href = "https://apps.apple.com/app/id374165361";
             } else if (/android/i.test(userAgent)) {
                 console.log("Redirecting to Google Play Store...");
-                window.location.href = "https://play.google.com/store/apps/details?id=" + androidPackageName;
+                window.location.href = "https://play.google.com/store/apps/details?id=com.taskrabbit.droid.consumer";
             } else {
                 document.getElementById("message").innerText = "Please visit the App Store or Google Play Store to download the app.";
             }
@@ -31,3 +26,4 @@
     <p id="message"></p>
 </body>
 </html>
+
